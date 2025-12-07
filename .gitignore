@@ -57,3 +57,8 @@ agent-framework.zip
 *.tmp
 *.temp
 
+# Generated ERC721 contracts and metadata
+ERC721_*.yul
+metadata_*.json
+*.yul
+

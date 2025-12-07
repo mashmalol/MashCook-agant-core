@@ -28,7 +28,7 @@ git add .
 
 REM Commit changes
 echo 💾 Committing changes...
-git commit -m "first commit"
+git commit -m "Add Streamlit web UI with API key input and ERC721 contract generation"
 
 REM Rename branch to main
 echo 🌿 Setting branch to main...

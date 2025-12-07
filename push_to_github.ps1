@@ -19,17 +19,21 @@ if (-not (Test-Path .git)) {
     git init
 }
 
-# Add all files
+# Add all files (respects .gitignore)
 Write-Host "📝 Adding files..." -ForegroundColor Cyan
 git add .
+Write-Host "📋 Checking what will be committed..." -ForegroundColor Cyan
+git status --short
 
 # Check if there are changes to commit
 $status = git status --porcelain
 if ($status) {
     Write-Host "💾 Committing changes..." -ForegroundColor Cyan
-    git commit -m "first commit"
+    $commitMessage = "Add Streamlit web UI with API key input and ERC721 contract generation"
+    git commit -m $commitMessage
 } else {
     Write-Host "ℹ️  No changes to commit" -ForegroundColor Yellow
+    Write-Host "   All files are already committed" -ForegroundColor Yellow
 }
 
 # Rename branch to main
